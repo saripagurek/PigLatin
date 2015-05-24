@@ -1,15 +1,42 @@
-puts "Type a word"
-input = gets.chomp
+def piglatin(word)
+  word = word.downcase
+  if word [0]=="a" or word [0]=="e" or word [0]== "i" or word [0]== "o" or word [0]== "u" or word [0]== "y"
+    return word + "way"
+  else
+    return word[1..-1]    + word[0] + "ay"
 
-if input [0]=="a" or input [0]=="e" or input [0]== "i" or input [0]== "o" or input [0]== "u" or input [0]== "y" or input [0]== "A" or input [0]=="E" or input [0]== "I" or input [0]== "O" or input [0]== "U" or input [0]== "Y"
-  puts input + "way"
-else
-  puts input[1..-1]    + input[0] + "ay"
-
+  end
 end
+
+
+#Davie Wavie
+
+
+
+while true
+  puts "Type a sentence"
+  input = gets.chomp
+  words = input.split(" ")
+  piglatin_sentence = ""
+  for word in words
+
+    if piglatin_sentence == "" then
+      piglatin_sentence = piglatin_sentence + piglatin(word)
+
+    else
+      piglatin_sentence = piglatin_sentence + " " + piglatin(word)
+    end
+    #purple black monkeys
+  end
+  puts piglatin_sentence [0].upcase + piglatin_sentence [1..-1]
+end
+
+#DDDDDDDDDDDDDDDDDDDDAAAAAAAAAAAAAAAaaaVVVVVVVvIIIIIIIiDDDDDDDDDDDDDDDd oooooh oooh I'm a ghost!   oooooh
+
+
+
 
 
 #this is all david's fault
 #i will delete this because of the weird monstrosity that is david.
 #orange tangarine monkeys
-gets
